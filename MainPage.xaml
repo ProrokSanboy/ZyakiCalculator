@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZyakiCalculator.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+          
+            <Label
+                Text="Калькулятор Зяки-Зяки"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1"
+                VerticalOptions="Start" />
+
+            <Label
+                Text=""
+                x:Name="ResultLabel"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Результат"
+                IsVisible="false"
+                VerticalOptions="Center" />    
+
+            <Entry
+                x:Name="NumberEntry"
+                Keyboard="Numeric"
+                Placeholder = "Введите число" 
+                HandlerChanged="OnNumberEntryChanged"
+                MaxLength ="20"
+                VerticalOptions="Center" />
+
+            <Button
+                x:Name="CalculateBtn"
+                Text="Считать Зяки" 
+                SemanticProperties.Hint="Нажмите, чтобы узнать Зяки-зяки"
+                Clicked="OnCalculateClick"
+                HorizontalOptions="Fill" 
+                VerticalOptions="End" />
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
